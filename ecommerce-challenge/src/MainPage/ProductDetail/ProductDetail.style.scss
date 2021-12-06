@@ -1,0 +1,105 @@
+.detail-page {
+    margin: 6rem;
+
+    .detail-content {
+        display: flex;
+
+        .detail-image {
+            width: 50%;
+
+            .image-first {
+                img {
+                    width: 94%;
+                    border-radius: 1rem;
+                }
+            }
+
+            .list-image {
+                display: flex;
+                margin-top: 3rem;
+
+                .image-item { 
+                    margin-right: 20px;
+                    width: 40%;
+
+                    img {
+                        width: 85%;
+                        border-radius: 1rem;
+                    }
+                }
+            }
+        }
+
+        .detail-description {
+            width: 50%;
+            margin-left: 4rem;
+            margin-top: 4rem;
+
+            .product-title {
+                color: hsl(26, 100%, 55%);
+                font-weight: bold;
+                font-size: 10px;
+            }
+
+            .product-name {
+                color: black;
+                font-weight: bold;
+                font-size: 50px;
+                line-height: 1;
+            }
+
+            .product-content {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                color: hsl(219, 9%, 45%);
+            }
+
+            .product-price {
+                .price-description {
+                    display: flex;
+                    align-items: center;
+
+                    .price-amount {
+                        color: black;
+                        font-weight: bold;
+                        font-size: 30px;
+                        margin-right: 2rem;
+                    }
+
+                    .price-increase {
+                        color: hsl(26, 100%, 55%);
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+                }
+
+                .price-total {
+                    color: hsl(219, 9%, 45%);
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+            }
+
+            .product-quantity {
+                margin-top: 3rem;
+                display: flex;
+                align-items: center;
+
+                .input-quantity {
+                    display: flex;
+                    border-radius: 3rem;
+
+                    .button-decrease {
+                        background-color: hsl(223, 64%, 98%);
+                        padding: 1rem;
+                    }
+
+                    .button-increase {
+                        background-color: hsl(223, 64%, 98%);
+                        padding: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
