@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className="navbar-page">
             <div className="navbar-content">
                 <div className="navbar-menu">
-                    <div className="navbar-item">Sneakers</div>
+                    <div className="navbar-item text-3xl" style={{color: 'black', fontWeight:'bold'}}>Sneakers</div>
                     <div className="navbar-item">Collections</div>
                     <div className="navbar-item">Men</div>
                     <div className="navbar-item">Women</div>

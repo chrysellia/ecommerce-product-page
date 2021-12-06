@@ -15,6 +15,11 @@
 
             .navbar-item {
                 margin-right: 3rem;
+                cursor: pointer;
+
+                &:hover {
+                    border-bottom: 2px solid hsl(26, 100%, 55%);
+                }
             }
         }
         .navbar-object {
@@ -22,10 +27,20 @@
             align-items: center;
             justify-content: center;
 
+            .navbar-cart {
+                cursor: pointer;
+            }
+
             .navbar-profile {
                 margin-left: 2rem;
+
                 img {
                     width: 40%;
+                    cursor: pointer;
+
+                    // &:hover {
+                    //     border-radius: 2rem solid hsl(26, 100%, 55%);
+                    // }
                 }
             }
         }
