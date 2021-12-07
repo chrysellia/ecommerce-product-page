@@ -62,7 +62,7 @@ const ProductDetail = () => {
                             </button>
 
                             <div className="quantity-value">
-                                <input type="text" className="h-full w-1/4"/>
+                                <input type="text" className="quantity-input"/>
                             </div>
 
                             <button className="button-increase">

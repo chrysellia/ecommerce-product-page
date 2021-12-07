@@ -91,10 +91,29 @@
                 .input-quantity {
                     display: flex;
                     border-radius: 3rem;
+                    margin-right: 3rem;
 
                     .button-decrease {
                         background-color: hsl(223, 64%, 98%);
                         padding: 1rem;
+                    }
+
+                    .quantity-value {
+                        .quantity-input {
+                            background-color: hsl(223, 64%, 98%);
+                            width: 45px;
+                            height: 42px;
+                            line-height: 1.65;
+                            float: left;
+                            display: block;
+                            padding: 0;
+                            margin: 0;
+                            padding-left: 20px;
+                            border: none;
+                            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+                            font-size: 1rem;
+                            border-radius: 4px;
+                        }
                     }
 
                     .button-increase {
