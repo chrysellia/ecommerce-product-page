@@ -28,7 +28,21 @@
             justify-content: center;
 
             .navbar-cart {
+                position: relative;
                 cursor: pointer;
+
+                .cart-number {
+                    position: absolute;
+                    top: 0;
+                    right: 0; 
+                    color: white;
+                    font-size: 40%;
+                    font-weight:bold;
+                    text-align: center;
+                    background-color: hsl(26, 100%, 55%);
+                    border-radius: 100rem;
+                    padding: 3px;
+                }
             }
 
             .navbar-profile {

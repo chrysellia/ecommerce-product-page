@@ -1,6 +1,77 @@
 .cart-page {
     background-color: white;
-    .cart-content {
+    width: 30%;
+    border-radius: 1rem;
+    float:right;
+    z-index: 3;
 
+    .cart-content {
+        .cart-title {
+            padding-top: 4px;
+            padding-left: 1rem;
+            font-weight: bold;
+        }
+
+        .cart-line {
+            padding-top: 1rem;
+            border-bottom: 1px solid hsl(220, 14%, 75%);
+        }
+
+        .cart-description {
+            .cart-empty {
+                .empty-message {
+                    color:hsl(219, 9%, 45%);
+                    font-size: 15px;
+                    text-align: center;
+                    padding-top: 4px;
+                    font-weight: bold;
+                }
+            }
+
+            .cart-full {
+                .full-description {
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 2rem;
+                    margin-left: 5px;
+                    padding-left: 1rem;
+
+                    .item-image {
+                        img {
+                            border-radius: 5px;
+                            width: 40px;
+                        }
+                    }
+
+                    .description-element {
+                        margin-left: 1rem;
+
+                        .item-title {
+                            color: hsl(220, 14%, 75%);
+                            padding-left: 3px;
+                        }
+
+                        .item-price {
+                            display: flex;
+                            color: hsl(220, 14%, 75%);
+                            margin-bottom: 3px;
+                            margin-right: 1rem;
+        
+                            .price-element {
+                                margin-right: 4px;
+                            }
+                        }
+        
+                        .item-result {
+                            color: black;
+                        }
+                    }  
+                } 
+
+                .delete-item {
+                    padding-left: 2rem;
+                }
+            }
+        }
     }
 }
