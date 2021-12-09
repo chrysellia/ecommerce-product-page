@@ -13,6 +13,12 @@
             margin-right: 2rem;
             color: hsl(220, 14%, 75%);
 
+            .navbar-logo {
+                color: black;
+                font-weight:900;
+                margin-right: 3rem;
+            }
+
             .navbar-item {
                 margin-right: 3rem;
                 cursor: pointer;
@@ -26,22 +32,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
 
             .navbar-cart {
                 position: relative;
-                cursor: pointer;
+                display: flex;
+                align-items: flex-start;
 
                 .cart-number {
-                    position: absolute;
-                    top: 0;
-                    right: 0; 
+                    position: relative;
+                    border-radius: 999%;
+                    // padding: 0.2rem;
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: -12.5px;
+                    right: 5px;
                     color: white;
-                    font-size: 40%;
-                    font-weight:bold;
-                    text-align: center;
                     background-color: hsl(26, 100%, 55%);
-                    border-radius: 100rem;
-                    padding: 3px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    
                 }
             }
 
@@ -52,9 +65,9 @@
                     width: 40%;
                     cursor: pointer;
 
-                    // &:hover {
-                    //     border-radius: 2rem solid hsl(26, 100%, 55%);
-                    // }
+                    &:hover {
+                        border-radius: 2rem solid hsl(26, 100%, 55%);
+                    }
                 }
             }
         }
