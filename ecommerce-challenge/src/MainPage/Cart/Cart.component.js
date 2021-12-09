@@ -1,10 +1,8 @@
 import React from 'react';
-import './Cart.style.scss'
+import './Cart.style.scss';
 
-const Cart = ({ show, toggleShow }) => {
+const Cart = ({ show, toggleShow, carts }) => {
     const cartRef = React.useRef(null);
-    
-    const carts = [{}];
 
     const hasCart = () => carts && carts.length;
 
@@ -46,13 +44,13 @@ const Cart = ({ show, toggleShow }) => {
                                                 </div>
                                                 <div className="flex">
                                                     <div className="description-element">
-                                                        <div className="item-title">Fall Limited Edition Sneakers</div>
+                                                        <div className="item-title">{ cart.name }</div>
                                                         <div className="flex">
                                                             <div className="item-price">
-                                                                <div className="price-element">$125.00</div>
+                                                                <div className="price-element">{ cart.price }</div>
                                                                 <div className="price-element">x</div>
-                                                                <div className="price-element">3</div>
-                                                                <div className="price-result text-black">$375.00</div>
+                                                                <div className="price-element">{ cart.quantity }</div>
+                                                                <div className="price-result text-black">{ cart.quantity * cart.price }</div>
                                                             </div>
                                                             <div className="delete-item">
                                                                 <svg width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"><defs>

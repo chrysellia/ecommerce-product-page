@@ -1,12 +1,15 @@
 import './App.scss';
 import React from 'react';
 import MainPage from './MainPage/MainPage.component'
+import {
+  RecoilRoot,
+} from 'recoil';
 
 const App = () => {
   return (
-    <div>
+    <RecoilRoot>
         <MainPage/>
-    </div>
+    </RecoilRoot>
   )
 }
 

@@ -2,14 +2,10 @@ import React from 'react';
 import './ProductDetail.style.scss'
 import ReactBnbGallery from 'react-bnb-gallery';
 import 'react-bnb-gallery/dist/style.css'
-import Cart from '../Cart/Cart.component';
+import cartState from '../../recoil/atom/cartState';
 import {
-    RecoilRoot,
-    atom,
-    selector,
     useRecoilState,
-    useRecoilValue,
-  } from 'recoil';
+} from 'recoil';
 
 const photos = [
     {
@@ -26,33 +22,30 @@ const photos = [
     },
 ]
 
+
+
 const ProductDetail = () => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [index, setIndex] = React.useState(0);
-
-    const cartState = atom({
-        key: 'cartState', // unique ID (with respect to other atoms/selectors)
-        default: [], // valeur par défaut (alias valeur initials)
-      });
 
     const [cart, setCart] = useRecoilState(cartState);
 
     const addProduct = (value) => {
         setCart([...cart, value]);
-      };
+    };
 
     const selectPhoto = async (index) => {
         await setIndex(index);
         setIsOpen(true);
     }
 
-    const [count, setCount] = React.useState(1);
+    const [quantity, setQuantity] = React.useState(1);
 
     const updateQuantity = (value) => {
-        let newValue = count + value;
+        let newValue = quantity + value;
 
         if (newValue <= 1) newValue = 1;
-        setCount(newValue);
+        setQuantity(newValue);
     }
 
     return (
@@ -118,7 +111,7 @@ const ProductDetail = () => {
                             </button>
 
                             <div className="quantity-value">
-                                <div className="quantity-input">{ count }</div>
+                                <div className="quantity-input">{ quantity }</div>
                             </div>
 
                             <button className="button-increase" onClick={() => updateQuantity(1)}>
@@ -129,11 +122,22 @@ const ProductDetail = () => {
                         </div>
 
                         {/* Add to Cart Button */}
-                        <div className="add-button">
+                        <div
+                            onClick={() => {
+                                const product = {
+                                    name: "Fall Limited Edition Sneakers",
+                                    price: "125"
+                                }
+
+                                addProduct({
+                                    ...product,
+                                    quantity
+                                })
+                            }}
+                            className="add-button">
                             <button 
-                                className="flex items-center text-white font-bold py-2 px-14 rounded" 
+                                className="flex items-center text-white font-bold whitespace-nowrap py-2 px-14 rounded" 
                                 style={{backgroundColor:'hsl(26, 100%, 55%)'}}
-                                onClick={() => addProduct}
                                 >
                                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg" className="mr-2">
                                     <path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffff" fill-rule="nonzero"/>
