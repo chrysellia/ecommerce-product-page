@@ -12,6 +12,14 @@
                     width: 94%;
                     border-radius: 1rem;
                 }
+
+                .show-image {
+                    display: none;
+                }
+            }
+
+            .arrow-design {
+                display: none;
             }
 
             .list-image {
@@ -138,10 +146,47 @@
                 width: 100%;
 
                 .image-first {
+                    position: relative;
+
                     img {
                         width: 100%;
                         border-radius: 0;
                     }
+                }
+
+                .arrow-design {
+                    display: block;
+
+                    .icon-previous {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: 10rem;
+                        left: 20px;
+                        background-color: white;
+                        border-radius: 999%;
+                        width: 30px;
+                        height: 30px;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+    
+                    .icon-next {
+                        position: absolute;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        top: 10rem;
+                        right: 20px;
+                        background-color: white;
+                        border-radius: 999%;
+                        width: 30px;
+                        height: 30px;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    
                 }
 
                 .list-image {

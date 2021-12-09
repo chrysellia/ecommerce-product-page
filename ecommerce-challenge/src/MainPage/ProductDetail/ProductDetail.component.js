@@ -27,6 +27,9 @@ const photos = [
 const ProductDetail = () => {
     const [isOpen, setIsOpen] = React.useState(false);
     const [index, setIndex] = React.useState(0);
+    const [slide, setSlide] = React.useState(0);
+
+    const refImage = React.useRef(null);
 
     const [cart, setCart] = useRecoilState(cartState);
 
@@ -48,6 +51,15 @@ const ProductDetail = () => {
         setQuantity(newValue);
     }
 
+    const updateSlide = (value) => {
+        let newValue = slide + value;
+
+        if (newValue <= 0) newValue = 0;
+        else if(newValue >= photos.length - 1) newValue = 0
+
+        setSlide(newValue);
+    }
+
     return (
         <div className="detail-page">
             <div className="detail-content">
@@ -55,7 +67,32 @@ const ProductDetail = () => {
                 {/* Image Bloc */}
                 <div className="detail-image">
                     <div className="image-first">
-                        <img src="images/image-product-1.jpg" alt="Sneakers One"/>
+                        <img src={photos[slide].photo} alt="Sneakers One" ref={refImage}/>
+
+                        <div className="show-image">
+                            <div className="image-item" onClick={()=> selectPhoto(1)}>
+                                <img src="images/image-product-2.jpg" alt="Sneakers Two"/>
+                            </div>
+                            <div className="image-item" onClick={()=> selectPhoto(2)}>
+                                <img src="images/image-product-3.jpg" alt="Sneakers Three"/>
+                            </div>
+                            <div className="image-item" onClick={()=> selectPhoto(3)}>
+                                <img src="images/image-product-4.jpg" alt="Sneakers Four"/>
+                            </div>
+                        </div>
+
+                        <div className="arrow-design">
+                            <div className="icon-previous" onClick={() => updateSlide(-1)}>
+                                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div className="icon-next" onClick={() => updateSlide(1)}>
+                                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     
                     <div className="list-image">
