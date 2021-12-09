@@ -88,3 +88,105 @@
         }
     }
 }
+
+@media only screen and (max-width: 375px) {
+    .cart-page {
+        background-color: white;
+        border-radius: 1rem;
+        z-index: 3;
+        position: absolute;
+        top: calc(100% + 1rem);
+        overflow: hidden;
+
+        &.show {
+            transform: scale(1);
+            width: calc(100% - 1.5rem);
+            position: fixed;
+            left: 0;
+            margin: 0.75rem;
+            top: 5rem;
+        }
+
+        &.hide {
+            transform: scale(0);
+        }
+
+        .cart-content {
+            padding: 0.5rem 0.75rem;
+
+            .cart-title {
+                padding-top: 4px;
+                padding-left: 1rem;
+                font-weight: 600;
+            }
+    
+            .cart-line {
+                padding-top: 1rem;
+                border-bottom: 1px solid hsl(220, 14%, 75%);
+            }
+    
+            .cart-description {
+                .cart-empty {
+                    .empty-message {
+                        color:hsl(219, 9%, 45%);
+                        font-size: 15px;
+                        text-align: center;
+                        padding-top: 4px;
+                        font-weight: bold;
+                    }
+                }
+    
+                .cart-full {
+                    .full-description {
+                        display: flex;
+                        align-items: center;
+    
+                        .item-image {
+                            margin-left: 1rem;
+                            img {
+                                border-radius: 5px;
+                                width: 40px;
+                            }
+                        }
+    
+                        .description-element {
+                            margin-left: 1rem;
+    
+                            .item-title {
+                                color: hsl(220, 14%, 75%);
+                                padding-left: 3px;
+                            }
+    
+                            .item-price {
+                                display: flex;
+                                color: hsl(220, 14%, 75%);
+                                margin-bottom: 3px;
+                                margin-right: 1rem;
+            
+                                .price-element {
+                                    margin-right: 4px;
+                                }
+                            }
+            
+                            .item-result {
+                                color: black;
+                                font-weight: bolder;
+                            }
+                        }  
+                    } 
+    
+                    .delete-item {
+                        padding-left: 2rem;
+                    }
+    
+                    .cart-button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width:auto;
+                    }
+                }
+            }
+        }
+    }
+}

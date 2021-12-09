@@ -1,14 +1,50 @@
 import React from 'react';
 import './Navbar.style.scss';
 import Cart from '../Cart/Cart.component';
+import { Rotate as Hamburger } from 'hamburger-react'
 
 const Navbar = () => {
     const [show, toggleShow] = React.useState(false);
+
+    const [isOpen, setOpen] = React.useState(false)
+    const superMenu = React.useRef(null);
+
     return (
         <div className="navbar-page">
             <div className="navbar-content">
-                <div className="navbar-menu">
-                    <div className="navbar-logo">Sneakers</div>
+
+                {/* Menu Mobile */}
+                <div className="menu-mobile">
+                    <div className="navbar-hamburger">
+                        <Hamburger
+                            toggled={isOpen}
+                            toggle={setOpen}
+                            easing="ease-in" 
+                            duration={0.4}/>
+                    </div>
+
+                    {/* Menu Hamburger opened */}
+                    <div className={`navbar-supermenu ${isOpen ? 'visible' : ''}`}>
+                        <div
+                            ref={superMenu}
+                            className="navbar-container">
+                            
+                            <div className="navbar-list">
+                                <div>
+                                    <div className="item-menu">Collections</div>
+                                    <div className="item-menu">Men</div>
+                                    <div className="item-menu">Women</div>
+                                    <div className="item-menu">About</div>
+                                    <div className="item-menu">Contact</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Menu Desktop */}
+                <div className="navbar-logo">Sneakers</div>
+                <div className="navbar-menu"> 
                     <div className="navbar-item">Collections</div>
                     <div className="navbar-item">Men</div>
                     <div className="navbar-item">Women</div>
